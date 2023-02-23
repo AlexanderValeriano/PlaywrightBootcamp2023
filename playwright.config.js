@@ -4,6 +4,7 @@ const config = {
   retries: 0,
   timeout: 30 * 1000,
   use: {
+    baseURL: "https://the-internet.herokuapp.com/",
     headless: false,
     viewPort: { width: 1280, height: 720 },
     video: "on-first-retry",
