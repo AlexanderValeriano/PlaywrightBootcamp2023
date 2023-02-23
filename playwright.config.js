@@ -3,6 +3,7 @@ const { PlaywrightTestConfig } = require("@playwright/test");
 const config = {
   retries: 0,
   timeout: 30 * 1000,
+  reporter: "./reporter.js",
   use: {
     baseURL: "https://the-internet.herokuapp.com/",
     headless: true,
