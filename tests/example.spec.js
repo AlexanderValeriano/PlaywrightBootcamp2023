@@ -22,7 +22,7 @@ test.describe("Smoke Tests", () => {
     await page.goto("https://the-internet.herokuapp.com/");
     // await page.pause();
     await page.click("a[href='/add_remove_elements/']");
-    const locator1 = page.locator("text = Add/Remove Elements");
+    const locator1 = page.locator("text = Add/Remove Elementss");
     await locator1.screenshot({ path: "screenshot2.png" });
     // await page.click("button[onclick='addElement()']");
   });
@@ -33,7 +33,6 @@ test.describe("Smoke Tests", () => {
     const element = page.locator("a[href='/add_remove_elements/']");
     await element.click();
     const addElement = page.locator("button[onclick='addElement()']");
-    await page.screenshot({ path: "screenshot1.png", fullPage: true });
     await addElement.click();
   });
 
