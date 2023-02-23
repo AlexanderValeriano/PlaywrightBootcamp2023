@@ -13,23 +13,27 @@ test.describe("Smoke Tests", () => {
     await expect(title).toHaveText("Playwright");
   });
 
-  test("Simple click test @test-regression", async ({ page, browserName }) => {
+  test.only("Simple click test @test-regression", async ({
+    page,
+    browserName,
+  }) => {
     // npx playwright test tests/example.spec.js --headed --browser=firefox
-    test.skip(browserName === "firefox", "Working on the firefox fix");
+    // test.skip(browserName === "firefox", "Working on the firefox fix");
     await page.goto("https://the-internet.herokuapp.com/");
     // await page.pause();
-    const element = page.locator("a[href='/add_remove_elements/']");
-    const addElement = page.locator("button[onclick='addElement()']");
-    await element.click();
-    await addElement.click();
+    await page.click("a[href='/add_remove_elements/']");
+    const locator1 = page.locator("text = Add/Remove Elements");
+    await locator1.screenshot({ path: "screenshot2.png" });
+    // await page.click("button[onclick='addElement()']");
   });
 
   test("Duplicate test 1 @regression-smoke", async ({ page }) => {
     await page.goto("https://the-internet.herokuapp.com/");
     // await page.pause();
     const element = page.locator("a[href='/add_remove_elements/']");
-    const addElement = page.locator("button[onclick='addElement()']");
     await element.click();
+    const addElement = page.locator("button[onclick='addElement()']");
+    await page.screenshot({ path: "screenshot1.png", fullPage: true });
     await addElement.click();
   });
 
