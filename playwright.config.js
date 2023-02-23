@@ -12,7 +12,7 @@ const config = {
   projects: [
     {
       name: "Chrome",
-      use: { browserName: "Chromium" },
+      use: { browserName: "chromium" },
     },
     {
       name: "Firefox",
