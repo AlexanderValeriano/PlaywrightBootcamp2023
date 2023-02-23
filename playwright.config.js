@@ -5,7 +5,7 @@ const config = {
   timeout: 30 * 1000,
   use: {
     baseURL: "https://the-internet.herokuapp.com/",
-    headless: false,
+    headless: true,
     viewPort: { width: 1280, height: 720 },
     video: "on-first-retry",
     screenshot: "only-on-failure",
