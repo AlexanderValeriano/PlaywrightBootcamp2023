@@ -2,6 +2,11 @@
 // @ts-check
 
 //** @implements {import('@playwright/test/reporter').Reporter} *//
+
+// npx playwright test --reporter=list
+// npx playwright test --reporter=line
+// npx playwright test --reporter=dot
+// npx playwright test --reporter=html
 class MyReporter {
   onBegin(config, suite) {
     console.log(`Starting the run with ${suite.allTests().length} tests`);
