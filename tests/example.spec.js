@@ -1,6 +1,7 @@
 const { test, expect } = require("@playwright/test");
 //npx playwright test tests/example.spec.js --headed --browser=firefox
 //npx playwright test tests/example.spec.js --headed --browser=all
+// npx playwright test --config=playwright.config.js --project=Chrome
 
 test.describe("Smoke Tests", () => {
   // npx playwright test --grep @smoke
@@ -23,7 +24,7 @@ test.describe("Smoke Tests", () => {
     await addElement.click();
   });
 
-  test("Duplicate test @regression-smoke", async ({ page }) => {
+  test("Duplicate test 1 @regression-smoke", async ({ page }) => {
     await page.goto("https://the-internet.herokuapp.com/");
     // await page.pause();
     const element = page.locator("a[href='/add_remove_elements/']");
@@ -33,7 +34,7 @@ test.describe("Smoke Tests", () => {
   });
 
   // npx playwright test --grep @regression
-  test("Duplicate test @regression", async ({ page }) => {
+  test("Duplicate test 2 @regression", async ({ page }) => {
     await page.goto("https://the-internet.herokuapp.com/");
     // await page.pause();
     const element = page.locator("a[href='/add_remove_elements/']");
