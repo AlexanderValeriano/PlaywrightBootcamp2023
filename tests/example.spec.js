@@ -3,7 +3,7 @@ const { test, expect } = require("@playwright/test");
 //npx playwright test tests/example.spec.js --headed --browser=all
 // npx playwright test --config=playwright.config.js --project=Chrome
 
-test.describe("Smoke Tests", () => {
+test.describe.parallel("Smoke Tests", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
   });
