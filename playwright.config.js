@@ -1,11 +1,13 @@
 const { PlaywrightTestConfig } = require("@playwright/test");
+// baseURL: "https://the-internet.herokuapp.com/",
+// baseURL: "https://demoqa.com/text-box",
 
 const config = {
   retries: 0,
   timeout: 30 * 1000,
   reporter: "./reporter.js",
   use: {
-    baseURL: "https://the-internet.herokuapp.com/",
+    baseURL: "https://www.interiale.fr/",
     headless: true,
     viewPort: { width: 1280, height: 720 },
     video: "on-first-retry",
