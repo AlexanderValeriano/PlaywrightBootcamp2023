@@ -11,6 +11,8 @@ const { test, expect } = require("@playwright/test");
 test("Simple click test", async ({ page }) => {
   await page.goto("https://the-internet.herokuapp.com/");
   // await page.pause();
-  await page.locator("a[href='/add_remove_elements/']").click();
-  await page.locator("button[onclick='addElement()']").click();
+  const element = page.locator("a[href='/add_remove_elements/']");
+  const addElement = page.locator("button[onclick='addElement()']");
+  await element.click();
+  await addElement.click();
 });
